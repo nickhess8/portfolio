@@ -26,8 +26,8 @@ html {
 }
 
 .mid .wrapper {
-  width:800px;
-  height:200px;
+  width:100%;
+  height:100%;
   position:absolute;
   //left:121px;
   //top:-12px;
@@ -59,10 +59,16 @@ html {
   animation: $anim $dur infinite ease-in;
 }
 
+@mixin oval($width, $height) {
+	width: $width;
+	height: $height;
+	border-radius: #{$width} / #{$height};
+}
 
 .blob:nth-of-type(1) {
   height:80px;
-  width:80px;
+  width:60px;
+  //@include oval(800,800);
   @include blobanimator(from-bottom, $slow);
 }
 .blob:nth-of-type(2) {
